@@ -89,6 +89,12 @@ describe('index', () => {
         });
     });
 
+    describe('getProgramNamesEnum', () => {
+        it('returns the ProgramNamesEnum.', () => {
+            expect(index.getProgramNamesEnum()).toBe(ProgramNamesEnum);
+        });
+    });
+
     describe('getBenchmarksData', () => {
         it('gets the benchmarks in all the present years.', () => {
             vol.fromNestedJSON({
