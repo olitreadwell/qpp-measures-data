@@ -86,7 +86,7 @@ For example, running `npm run update:measures $YEAR` will also validate the meas
 
 #### Initializing
 
-To create a new perfomance year for measures, run `npm run init:measures $YEAR`. This will create all the necessary folders and files for the new year, as well as perform various resets of the new year's measures data such as increment the quality eMeasureIds and remove last year's spec links from the new measures-data file.
+To create a new performance year for measures, run `npm run init:measures $YEAR`. This will create all the necessary folders and files for the new year, as well as perform various resets of the new year's measures data such as increment the quality eMeasureIds and remove last year's spec links from the new measures-data file.
 
 #### Adding/Updating
 
@@ -116,13 +116,13 @@ The specification links are added by placing the CSV or JSON files into /util/me
 
 ### Managing Allowed Programs for Measures
 
-When creating a new AllowedProgram, the program name should be added to the following files. Place the new allowedProgram where it most makes sense in the array and be consistant with its placement in all files:
+When creating a new AllowedProgram, the program name should be added to the following files. Place the new allowedProgram where it most makes sense in the array and be consistent with its placement in all files:
 * util/interfaces/program-names.ts
 * util/program-names/program-names.json
 * index.spec.ts (The "ProgramNames interface" test)
 * measures/$YEAR/measures-schema.yaml
 
-When deleting an allowedProgram that is still allowed for previous years, DO NOT remove it from all the above files. Instead, only remove it from the measures-schema.yaml file for the appropiate year(s).
+When deleting an allowedProgram that is still allowed for previous years, DO NOT remove it from all the above files. Instead, only remove it from the measures-schema.yaml file for the appropriate year(s).
 
 The `manage:allowed-programs` script enables adding or removing a program from the `allowedPrograms` field of all measures in a specific category for a given performance year. This is especially useful for bulk updates, such as adding a new program or making uniform changes across multiple measures.
 
