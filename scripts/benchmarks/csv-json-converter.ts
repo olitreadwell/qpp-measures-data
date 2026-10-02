@@ -91,7 +91,7 @@ function mapInput(columnName: string, csvRow: any) {
     return csvRow[columnName].trim();
 }
 
-//converts field 'Yes' to True and 'No' to False, any varients.
+//converts field 'Yes' to True and 'No' to False, any variants.
 function csvFieldToBoolean(field: string, value: string): boolean {
     switch (value.toLowerCase()) {
         case 'y':
