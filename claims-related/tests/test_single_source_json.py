@@ -239,7 +239,7 @@ def dx_format_json_measure(json_diag_codes, measure):
 
 
 def convert_inclusion_exclusion_string_to_lists(input_string):
-    """Formats included, excluded strings for modifiers and placesOfService & their exlusion attributes."""
+    """Formats included, excluded strings for modifiers and placesOfService & their exclusion attributes."""
     list_split_regex = re.compile(r",\s*|\s*or\s*|≠\s*|=\s*")
     not_equals_split_regex = re.compile(r"≠\s*")
 
@@ -316,7 +316,7 @@ def format_source_procedure_codes(single_source_df):
 
 
 def format_json_genders(genders_dict, measure):
-    """Format ouput json genders and add to passed dict."""
+    """Format output json genders and add to passed dict."""
     measure_id = measure["measureId"]
     if "eligibilityOptions" in measure:
         for i, option in enumerate(measure["eligibilityOptions"]):
@@ -326,7 +326,7 @@ def format_json_genders(genders_dict, measure):
 
 
 def format_json_age(age_dict, measure):
-    """Format ouput json ages and add to passed dict."""
+    """Format output json ages and add to passed dict."""
     if "eligibilityOptions" in measure:
         for i, option in enumerate(measure["eligibilityOptions"]):
             measure_id = measure["measureId"] + ".0" + str(i)
@@ -356,7 +356,7 @@ def check_field_equality(field_1, field_2):
 
 
 def format_json_proc_codes(proc_dict, measure):
-    """Format ouput json procedure codes and add to passed dict."""
+    """Format output json procedure codes and add to passed dict."""
     if "eligibilityOptions" in measure:
         for i, option in enumerate(measure["eligibilityOptions"]):
             m_id = measure["measureId"]

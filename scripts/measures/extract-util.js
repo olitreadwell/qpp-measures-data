@@ -32,7 +32,7 @@ const extractZip = function (zipPath, extractDir, maxFiles = 100, maxSize = 5000
 
 const getXMLFiles = function(tmpDir, tmpPath) {
   return fs.readdirSync(tmpDir).map(measureZip => {
-    // 2024 xml fiels list does not have -v2 in the filename. Check for -v2 may need to be removed in future.
+    // 2024 xml files list does not have -v2 in the filename. Check for -v2 may need to be removed in future.
     const folder = (measureZip.toString().split('.')[0].replace('-v2', ''));
     const zip = new AdmZip(path.join(tmpDir, measureZip));
     const { entryName: filename } = zip.getEntries()

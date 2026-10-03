@@ -27,7 +27,7 @@ def create_list_from_code_row(code_row):
 
 
 def create_code_modifier_key(row):
-    """Create look-up key from CPT/HCPCS code and their corresopnding modifier."""
+    """Create look-up key from CPT/HCPCS code and their corresponding modifier."""
     return '-'.join(create_list_from_code_row(row))
 
 
