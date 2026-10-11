@@ -108,7 +108,7 @@ function mapInput(columnName: string, csvRow: any, category: string) {
         return csvFieldToBoolean(columnName, csvRow[columnName].trim());
     }
 
-    //fields with comma seperated values.
+    //fields with comma separated values.
     if (ARRAY_CSV_FIELDS.includes(columnName)) {
         const rawArray = csvFieldToArray(csvRow[columnName], columnName);
         //map historic_benchmarks

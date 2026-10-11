@@ -48,7 +48,7 @@ At least one of each type of PR label should be added for checks to pass.
 
 **Patch** versions are code-only changes, with no data updates.
 **Minor** versions are data changes, such as updates to the measures-data.json files.
-**Major** versions are annual and tied to a PY's data becoming avaliable, determined by QPPA's PO.
+**Major** versions are annual and tied to a PY's data becoming available, determined by QPPA's PO.
 
 ---
 
