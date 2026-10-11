@@ -154,6 +154,22 @@ describe('index', () => {
             expect(schemaJson['$schema']).toBeDefined();
             expect(schemaJson['definitions']).toEqual(expect.any(Object));
         });
+
+        it('gets the benchmarks schema for a legacy performance year.', () => {
+            vol.fromNestedJSON({
+                'benchmarks/2022': {
+                    'benchmarks-schema.yaml': fs.readFileSync(
+                        path.join(__dirname, 'benchmarks', '2022', 'benchmarks-schema.yaml'), 'utf8'
+                    ),
+                },
+            });
+
+            const schemaJson = index.getBenchmarksSchema(2022);
+
+            expect(schemaJson['$schema']).toBeDefined();
+            expect(schemaJson['items']).toStrictEqual({ $ref: '#/definitions/benchmark' });
+            expect(schemaJson['definitions']).toEqual(expect.any(Object));
+        });
     });
 
     describe('getBenchmarksExclusionReasons', () => {
@@ -350,6 +366,22 @@ describe('index', () => {
 
             expect(schemaJson['$id']).toBeDefined();
             expect(schemaJson['$schema']).toBeDefined();
+            expect(schemaJson['definitions']).toEqual(expect.any(Object));
+        });
+
+        it('gets the clinical clusters schema for a legacy performance year.', () => {
+            vol.fromNestedJSON({
+                'clinical-clusters/2022': {
+                    'clinical-clusters-schema.yaml': fs.readFileSync(
+                        path.join(__dirname, 'clinical-clusters', '2022', 'clinical-clusters-schema.yaml'), 'utf8'
+                    ),
+                },
+            });
+
+            const schemaJson = index.getClinicalClusterSchema(2022);
+
+            expect(schemaJson['$schema']).toBeDefined();
+            expect(schemaJson['items']).toStrictEqual({ $ref: '#/definitions/ClusterType' });
             expect(schemaJson['definitions']).toEqual(expect.any(Object));
         });
     });
