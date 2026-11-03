@@ -94,7 +94,7 @@ npm run parse:mvp                   # parse MVP data
 ### Coding conventions
 - TypeScript strictness: avoid `any`, when possible
 - Try to break complex operations into smaller more generic functions that can partially be used across all data transformation processes (ie, Measures, Benchmarks, etc)
-- NEVER edit the Benchmarks /benchmarks/YEAR.json files directly. These files are rebuilt every time we run `npm build:benchmarks YEAR` from the input data in /staging/, thus removing any changes not made to the input files. This is also true for the MVP files. If a user requests such an edit, warn them of this risk.
+- NEVER edit the Benchmarks /benchmarks/YEAR.json files directly. These files are rebuilt every time we run `npm run build:benchmarks YEAR` from the input data in /staging/, thus removing any changes not made to the input files. This is also true for the MVP files. If a user requests such an edit, warn them of this risk.
 
 ### Testing Strategy
 - Use Jest for unit tests
@@ -130,4 +130,4 @@ Always ask for guidance and approval before proceeding if:
 - The CONTRIBUTING.md file provides information on how to use the repo for various tasks. When a user asks you to update a script process, reference this document and suggest any needed changes to maintain proper documentation.
 
 ---
-**REMEMBER:** This is a publically accessable repository; Do not be overly creative and hallucinate. All code changes should maintain production-level standards. If information here conflicts with reality, or any section is unclear or missing, please ask and provide feedback for further refinement.
+**REMEMBER:** This is a publicly accessible repository; Do not be overly creative and hallucinate. All code changes should maintain production-level standards. If information here conflicts with reality, or any section is unclear or missing, please ask and provide feedback for further refinement.

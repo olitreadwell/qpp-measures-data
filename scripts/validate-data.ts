@@ -1,13 +1,13 @@
 /**
- * Expects JSON from standard input and validates against a specified version and
- * type of schema. If no version is specified, the schema version will default
- * to the latest. In the case of an invalid JSON document, the output will contain
- * the validation error.
+ * Reads a JSON file and validates it against a specified version and type of
+ * schema. If no performance year is specified, the schema version will default
+ * to the current performance year. In the case of an invalid JSON document, the
+ * output will contain the validation error.
  *
  * This script can be used as follows:
  * node [this file's path] [schemaType] [performanceYear] [json file path]
  * Example:
- * node dist/validate-data.js measures 2018 measures/measures-data.json
+ * node dist/scripts/validate-data.js measures 2018 measures/2018/measures-data.json
  **/
 
 import path from 'path';
@@ -39,7 +39,7 @@ function validate(schema: AnySchemaObject, json: any) {
 }
 
 if (!schemaType) {
-  console.log('Please provide schema type, e.g. measures or benchmarks\nExample Command: node dist/validate-data.js measures 2023 measures/measures-data.json');
+  console.log('Please provide schema type, e.g. measures or benchmarks\nExample Command: node dist/scripts/validate-data.js measures 2023 measures/2023/measures-data.json');
   process.exit(1);
 }
 
