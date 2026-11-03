@@ -65,7 +65,7 @@ parseOffice(pptPath, config).then(async (ast) => {
   // format data into to the structure json2csv accepts
   const clinicalClaimsData: object[] = [];
   const clinicalRegistryData: object[] = [];
-  Object.keys(clinicalMeasures).map(clinicalTopic => {
+  Object.keys(clinicalMeasures).forEach(clinicalTopic => {
     Object.keys(clinicalMeasures[clinicalTopic]).forEach(measureId => {
       const measure = filteredMeasures.find(measure => measure["measureId"] == measureId) || {};
       if (measure["submissionMethods"].includes("claims")) clinicalClaimsData.push({ "Title": clinicalTopic, "Quality ID": measureId });
@@ -115,7 +115,7 @@ function checkMeasure(value: string) {
   return MEASURE_START_REGEX.test(value) || value.trim().toLowerCase() == "not applicable"
 }
 
-// get clinical topic merged together with previous lines if seperated by linebreaks
+// get clinical topic merged together with previous lines if separated by linebreaks
 function getClinicalTopic(data: string[], index: number) {
   let currentIndex = index - 1;
   const clinicalTopic: string[] = [];
@@ -127,7 +127,7 @@ function getClinicalTopic(data: string[], index: number) {
   return clinicalTopicReplace[fullClinicalTopic] ? clinicalTopicReplace[fullClinicalTopic] : fullClinicalTopic;
 }
 
-// extract measures that is not seperated by line breaks. ex: `123: desc456: desc`
+// extract measures that is not separated by line breaks. ex: `123: desc456: desc`
 function extractInlineMeasures(lineData: string, matches: string[]) {
   const subMeasures: string[] = [];
   matches.reverse().forEach((match, index) => {

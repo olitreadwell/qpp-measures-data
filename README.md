@@ -14,7 +14,7 @@ Measures and benchmark data can be accessed by installing the `qpp-measures-data
 
 The measures data JSON schema is described in `measures/$YEAR/measures-schema.yaml`; $YEAR refers to the performance year. The measures data here combines existing data from the QPP API, with supplementary data found in `util`. To access measures data without installing the NPM repository, run `git clone git@github.com:CMSgov/qpp-measures-data.git` and navigate to `measures/$YEAR/measures-data.json`.
 
-The benchmarks data JSON schema is described in `benchmarks/benchmarks-schema.yaml`.
+The benchmarks data JSON schema is described in `benchmarks/$YEAR/benchmarks-schema.yaml`.
 
 To access the benchmarks data without installing the NPM repository, run `git clone git@github.com:CMSgov/qpp-measures-data.git` and navigate to `benchmarks/`. Benchmarks data is organized by performance year. For example, `benchmarks/2017.json` contains the benchmarks for performance year 2017
 (benchmark year 2015).
@@ -39,7 +39,7 @@ const mvpData = qppMeasuresData.getMVPData($YEAR, mvpIds);
 const mvpSchema = qppMeasuresData.getMVPSchema($YEAR);
 ```
 
-We elso export common data types such as Measures and Benchmarks. You can view the list of these in util/interfaces/index.ts.
+We also export common data types such as Measures and Benchmarks. You can view the list of these in util/interfaces/index.ts.
 
 ## Contributing
 

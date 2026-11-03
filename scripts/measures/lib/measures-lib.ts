@@ -49,7 +49,7 @@ export function updateChangeLog(fileName: string, changesPath: string) {
  * Deletes the specified measure by: 
  *  (1) Removing it from measures-data.json
  *  (2) Deleting it's strata from the related strata.csv
- *  (3) Removing any reference of it from other measures' exlusion or substitute arrays
+ *  (3) Removing any reference of it from other measures' exclusion or substitute arrays
  */
 export function deleteMeasure(measureId: string, category: string, measuresJson: Measure[], strataPath: string, performanceYear?: string) {
     const measureIndex = _.findIndex(measuresJson, { measureId });
@@ -295,7 +295,7 @@ export function orderFields(measure: Measure): Measure {
 }
 
 /**
- * Finds and returns the _PRE and _PROD measures that corrospond with the
+ * Finds and returns the _PRE and _PROD measures that correspond with the
  * current measure, if they exist.
  */
 function populatePreProdArray(change: MeasuresChange, measuresJson: Measure[]): string[] | undefined {
